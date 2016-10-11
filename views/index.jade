@@ -1,0 +1,133 @@
+extends layout
+block content
+  script.
+    $( document ).ready(function(){
+      $('.slider').slider({full_width: true, indicators: false});
+      $(".button-collapse").sideNav();
+      $('.parallax').parallax();
+
+      $("#meButton").click(function() {
+        $('html, body').animate({
+          scrollTop: $("#aboutMe").offset().top - 64
+        }, 'slow');
+      });
+
+      $("#photographyButton").click(function() {
+        $('html, body').animate({
+          scrollTop: $("#photography").offset().top - 64
+        }, 'slow');
+      });
+
+      $("#slideshow > div:gt(0)").hide();
+
+      setInterval(function() {
+        $('#slideshow > div:first')
+          .fadeOut(1000)
+          .next()
+          .fadeIn(2000)
+          .end()
+          .appendTo('#slideshow');
+      },  3000);
+    })
+  html
+    body
+      .navbar-fixed
+        nav
+          .nav-wrapper
+            a.brand-logo(href='#!')
+            a.button-collapse(href='#', data-activates='mobile-demo')
+              i.material-icons menu
+            ul.right.hide-on-med-and-down
+              li
+                a(href='./') Home
+              li
+                a(href='./gallery') My Photos
+            ul#mobile-demo.side-nav
+              li
+                a(href='sass.html') Sass
+              li
+                a(href='badges.html') Components
+              li
+                a(href='collapsible.html') Javascript
+              li
+                a(href='mobile.html') Mobile
+      .image-container
+        .middle-container
+          h1 Andrew Arifin
+          h2 Developer • Photographer • Engineer
+          a#meButton.waves-effect.waves-light.btn
+            i.fa.fa-user(aria-hidden='true')
+            | About Me
+          a#photographyButton.waves-effect.waves-light.btn
+            i.fa.fa-camera(aria-hidden='true')
+            | My Photography
+        .slider.fullscreen
+          ul.slides
+            li
+              img(src='images/landing/landing1.JPG')
+            li
+              img(src='images/landing/landing2.JPG')
+            li
+              img(src='images/landing/landing3.JPG')
+            li
+              img(src='images/landing/landing.JPG')
+      #aboutMe.section.white
+        .row.container
+          .meContainer
+            img(src="images/me.JPG")#profile.circle
+            .meText
+              p.grey-text.text-darken-3.lighten-3
+                | Salutations! My name is Andrew Arifin and I am from the Bay Area. Growing up in the Silicon Valley has had a huge influence on me.
+                | I am currently pursuing my undergraduate degree at UCLA in Computer Science and Engineering.
+              p.grey-text.text-darken-3.lighten-3
+                | Computer science has been a passion of mine for quite some time now. These past two summers,
+                | I worked as a software engineering intern at Onerent, a burgeoning start up that is looking to
+                | revolutionize property management.
+              p.grey-text.text-darken-3.lighten-3
+                | In my free time, I enjoy web and app development as side projects.
+                | I also enjoy spending time with my dogs, listening to EDM, reading books and long form artciles,
+                | travelling, and photography.
+              .buttonContainer
+                a(href='https://www.instagram.com/arifinee').btn-floating.btn-large.waves-effect.waves-light.yellow.darken-3
+                  i.fa.fa-instagram(aria-hidden='true')
+                a(href='https://www.linkedin.com/in/andrewarifin').btn-floating.btn-large.waves-effect.waves-light.yellow.darken-3
+                  i.fa.fa-linkedin-square(aria-hidden='true')
+                a.btn-floating.btn-large.waves-effect.waves-light.yellow.darken-3
+                  i.fa.fa-file(aria-hidden='true')
+      .parallax-container
+        .parallax
+          img(src='images/landing/landing3.JPG')#landing2
+      #photography.section.white
+        #pictures.row.container
+          #slideshow
+            div
+              img(src='images/landing/landing2.JPG')#slideimg
+            div
+              img(src='images/landing/landing1.JPG')#slideimg
+          #photoInfoContainer
+            #photoInfo
+              | A year ago, I made the switch the team iPhone and began taking pictures with it. I take a lot of pride in shooting and editing all on my iPhone. Feel free to check out more of shots by clicking the button below!
+            div#button
+              a#viewMore.waves-effect.waves-light.btn
+                | View More
+      footer.page-footer
+        .container
+          .row
+            //- .col.l6.s12
+            h5.white-text Contact Me!
+            p.grey-text.text-lighten-4 Want to get in touch? Feel free to send me a message!
+            .input-field.s6.col
+              input#first_name.validate(placeholder='John Smith', type='text')
+              label(for='first_name') Your name
+            .input-field.s6.col
+              input#first_name.validate(placeholder='andrew@ucla.edu', type='email')
+              label(for='first_name') Your Email
+            .input-field.col.s12
+              textarea#textarea1.materialize-textarea.validate(placeholder= 'Your message', type='text')
+
+        .footer-copyright
+          .container
+            | © 2016 Andrew Arifin
+
+
+
