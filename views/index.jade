@@ -88,7 +88,7 @@ block content
                   i.fa.fa-instagram(aria-hidden='true')
                 a(href='https://www.linkedin.com/in/andrewarifin').btn-floating.btn-large.waves-effect.waves-light.yellow.darken-3
                   i.fa.fa-linkedin-square(aria-hidden='true')
-                a.btn-floating.btn-large.waves-effect.waves-light.yellow.darken-3
+                a(href='images/resume.pdf').btn-floating.btn-large.waves-effect.waves-light.yellow.darken-3
                   i.fa.fa-file(aria-hidden='true')
       .parallax-container
         .parallax
@@ -97,9 +97,47 @@ block content
         #pictures.row.container
           #slideshow
             div
-              img(src='images/landing/landing2.JPG')#slideimg
+              img(src='/images/gallery/white1.JPG', alt='')#slideimg
             div
-              img(src='images/landing/landing1.JPG')#slideimg
+              img(src='/images/gallery/white2.JPG', alt='')#slideimg
+            div
+              img(src='/images/gallery/white3.JPG', alt='')#slideimg
+            div
+              img(src='/images/gallery/green1.JPG', alt='')#slideimg
+            div
+              img(src='/images/gallery/green3.JPG', alt='')#slideimg
+            div
+              img(src='/images/gallery/green2.JPG', alt='')#slideimg
+            div
+              img(src='/images/gallery/blue1.JPG', alt='')#slideimg
+            div
+              img(src='/images/gallery/blue2.JPG', alt='')#slideimg
+            div
+              img(src='/images/gallery/blue3.JPG', alt='')#slideimg
+            div
+              img(src='/images/gallery/blue4.JPG', alt='')#slideimg
+            div
+              img(src='/images/gallery/blue5.JPG', alt='')#slideimg
+            div
+              img(src='/images/gallery/blue6.JPG', alt='')#slideimg
+            div
+              img(src='/images/gallery/brown1.JPG', alt='')#slideimg
+            div
+              img(src='/images/gallery/brown2.JPG', alt='')#slideimg
+            div
+              img(src='/images/gallery/brown3.JPG', alt='')#slideimg
+            div
+              img(src='/images/gallery/dark4.JPG', alt='')#slideimg
+            div
+              img(src='/images/gallery/dark6.JPG', alt='')#slideimg
+            div
+              img(src='/images/gallery/dark5.JPG', alt='')#slideimg
+            div
+              img(src='/images/gallery/dark1.jpg', alt='')#slideimg
+            div
+              img(src='/images/gallery/dark2.JPG', alt='')#slideimg
+            div
+              img(src='/images/gallery/dark3.JPG', alt='')#slideimg
           #photoInfoContainer
             #photoInfo
               | A year ago, I made the switch the team iPhone and began taking pictures with it. I take a lot of pride in shooting and editing all on my iPhone. Feel free to check out more of shots by clicking the button below!
@@ -120,6 +158,9 @@ block content
               label(for='first_name') Your Email
             .input-field.col.s12
               textarea#textarea1.materialize-textarea.validate(placeholder= 'Your message', type='text')
+              div#contactButton
+                a(onclick="Materialize.toast('Message Sent', 2000)")#viewMore.waves-effect.waves-light.btn
+                  | Send Message!
 
         .footer-copyright
           .container
